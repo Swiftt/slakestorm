@@ -1,0 +1,288 @@
+.ContentBox {
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.ContentBox .ContentBox_Title {
+    position: relative;
+    z-index: 11;
+    height: .8rem;
+    line-height: .8rem;
+    padding: 0 .2rem;
+    background-color: #fff;
+    box-shadow: 0 1px 5px #d9d9d9;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ContentBox .ContentBox_Title a {
+    display: inline-block;
+    height: .5rem;
+    line-height: .5rem;
+    padding: 0 .2rem;
+    margin: 0 .1rem;
+    color: #fff;
+    background-color: #0099ff;
+    border-radius: .5rem;
+    box-shadow: 0 0 5px #0099ff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.ContentBox .ContentBox_Main {
+    position: absolute;
+    top: .8rem;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    padding: .3rem;
+    font-size: .24rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+.ContentBox .ContentBox_Main_Nothing {
+    padding-top: .5rem;
+    color: #999;
+    font-size: .36rem;
+    text-align: center;
+}
+
+.ContentBox .Content_Moudle {
+    position: relative;
+    padding: .5rem .2rem .2rem .2rem;
+    margin-top: .3rem;
+    background-color: #fff;
+    border-radius: .1rem;
+    overflow: hidden;
+    box-shadow: 0 0 0.1rem rgba(0, 0, 0, .1);
+}
+
+.ContentBox .Content_Moudle:first-child {
+    margin-top: 0;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Title,
+.ContentBox .ContentBox_Import_Head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: .5rem;
+    line-height: .5rem;
+    padding: 0 .2rem;
+    color: #666;
+    font-size: .2rem;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Title a {
+    float: right;
+    color: #0099ff;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content > div {
+    position: relative;
+    line-height: .8rem;
+    border-bottom: .02rem solid #f0f0f0;
+    text-align: right;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content label {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content input {
+    width: 60%;
+    height: .7rem;
+    border: none;
+    text-align: right;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content span {
+    display: inline-block;
+    width: 60%;
+    line-height: .4rem;
+    padding: .1rem 0;
+    color: #333;
+    vertical-align: middle;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content input::placeholder {
+    color: #333;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content > div[type="add"] {
+    border: none;
+    text-align: center;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content > div[type="add"] > a {
+    display: inline-block;
+    width: 80%;
+    line-height: .6rem;
+    color: #fff;
+    background-color: #0099ff;
+    border-radius: .1rem;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content > div.dynamicBox,
+.ContentBox .Content_Moudle .Content_Moudle_Content > div.foldBox {
+    margin-top: .2rem;
+    border: none;
+    text-align: left;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content > div.foldBox [type="teatarea"] {
+    border: none;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content > div.foldBox [type="textarea"] label {
+    position: relative;
+    display: block;
+    text-align: left;
+}
+
+.ContentBox .Content_Moudle .Content_Moudle_Content > div.foldBox [type="textarea"] textarea {
+    width: 100%;
+    height: 2rem;
+    line-height: .3rem;
+    padding: .1rem .2rem;
+    font-size: .22rem;
+    background-color: #f8f8f8;
+    border: none;
+    text-align: left;
+}
+
+/*导入导出*/
+
+.ContentBox .ContentBox_Import {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ContentBox .ContentBox_Import_Head {
+    height: .8rem;
+    line-height: .8rem;
+    font-size: .3rem;
+}
+
+.ContentBox .ContentBox_Import_Head_Btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: .5rem;
+    margin-top: -.25rem;
+}
+
+.ContentBox .ContentBox_Import_Head i {
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    margin-right: .2rem;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 80% auto;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.ContentBox .ContentBox_Import_Head i[type="copy"] {
+    background-image: url(images/icon-copy.svg);
+}
+
+.ContentBox .ContentBox_Import_Head i[type="close"] {
+    background-image: url(images/icon-close.svg);
+}
+
+.ContentBox .ContentBox_Import_Content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: .8rem 0;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.ContentBox .ContentBox_Import_Textarea {
+    height: 100%;
+    padding: .2rem;
+}
+
+.ContentBox .ContentBox_Import_Textarea textarea,
+.ContentBox .ContentBox_Import_Textarea .textarea {
+    width: 100%;
+    height: 100%;
+    padding: .1rem;
+    font-size: .22rem;
+    border: .02rem dashed #ccc;
+    white-space: normal;
+    word-break: break-all;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+.ContentBox .ContentBox_Import_Btn {
+    width: 100%;
+    height: .8rem;
+    line-height: .8rem;
+    color: #fff;
+    font-size: .36rem;
+    background-color: #0099ff;
+    text-align: center;
+}
+
+/*预览*/
+
+.ContentBox .ContentBox_Preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background: linear-gradient(to bottom, #f3f3f3 90%, #fff);
+}
+
+.ContentBox .ContentBox_Preview_Close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 21;
+    width: .7rem;
+    height: .7rem;
+    line-height: .7rem;
+    color: #fff;
+    font-size: .2rem;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: .7rem;
+    border-top-right-radius: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ContentBox .ContentBox_Preview_Content {
+    width: 100%;
+    height: 100%;
+    padding: .2rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
