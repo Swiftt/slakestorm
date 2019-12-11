@@ -1,0 +1,1422 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>api文档</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="boot.js"></script>
+</head>
+
+<body>
+    <script>
+        $(function() {
+            $$.Content_Tab({
+                elem: 'body',
+                fixed: true,
+                slide: true,
+                data: [{
+                        menu: '通用 (24)',
+                        callback: COMMON,
+                        param: {
+                            "class": 'COMMON'
+                        }
+                    },
+                    {
+                        menu: 'APP (10)',
+                        callback: APP,
+                        param: {
+                            "class": 'APP'
+                        }
+                    },
+                    {
+                        menu: 'WEB',
+                        content: '待更新'
+                    },
+                ]
+            });
+
+            //通用
+            function COMMON() {
+                $$.Content_Form({
+                    elem: '.COMMON',
+                    data: [{
+                            "index": "64d8d57cb675cc49e4a748c100a7ddf",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "入坑必读",
+                            "value": "must",
+                            "sketch": "",
+                            "must": [{
+                                "index": "db9b7e4c46f1331ab09afc80fc2e389",
+                                "type": "multShow",
+                                "text": "多行文本",
+                                "name": "请仔细阅读",
+                                "value": "使用本api前，请先在页面引用\nhttp://app.slakestorm.com/api/boot.js  (局域网)\n或者\nhttp://slakestorm.com/api/boot.js (外网)\n否则 (￢︿̫̿￢☆)"
+                            }]
+                        }, {
+                            "index": "2f97502527761da9417763115427068",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "browserVersion",
+                            "value": "browserVersion",
+                            "sketch": "(参数) 用户访问的设备类型",
+                            "browserVersion": [{
+                                "index": "c2bed868179e10f95e7ed1b32b27806",
+                                "type": "multShow",
+                                "text": "多行文本",
+                                "name": "示例",
+                                "value": "//Chrome / Safari / FF / Opera\n//Edge / IE11 / IE10 / IE9 / IE8 / IE7"
+                            }]
+                        },
+                        {
+                            "index": "8adf1561c60ea6da3c8ff6bd00330d7",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.localName",
+                            "value": "localName",
+                            "sketch": "获取地址栏参数",
+                            "localName": [{
+                                    "index": "af73fbf1e218adcb2902d0e87e0b2d0",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "1",
+                                    "musttext": "是",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "c7e5479fb355b9eb7b162d11b079e83",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "搜索范围",
+                                    "value": "true/false"
+                                },
+                                {
+                                    "index": "d62260df66c12a0acac33f11fcf884f",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "true - 查#后面参数  false/空 - 查?后面参数\n$$.localName(\"name\", true/false);"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "010aa196d3e08b48c1eb2ace1f2551f",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.getLocalParam",
+                            "value": "getLocalParam",
+                            "sketch": "获取地址栏所有参数",
+                            "getLocalParam": [{
+                                "index": "726747caae859f09986cef2a3806fcb",
+                                "type": "multShow",
+                                "text": "多行文本",
+                                "name": "示例",
+                                "value": "var param = $$.getLocalParam();\n\nlog({data: \"1234\", hash: \"hash\"});"
+                            }]
+                        },
+                        {
+                            "index": "96537c07a7a6b6984db8a463303daf3",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.typeOf",
+                            "value": "typeof",
+                            "sketch": "获取数据类型 (不支持未定义参数)",
+                            "typeof": [{
+                                    "index": "5d01277b75ab9ffbdfcc79e126dc9a9",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "数据",
+                                    "value": "data"
+                                },
+                                {
+                                    "index": "f8449364880650f9080c298e1ac7019",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//返回数据类型 object/string/array/number/function/undefined\n$$.typeOf(\"data\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "946e66928b4cd0c8236fb51cb5a1094",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.ajaxRequest",
+                            "value": "ajaxRequest",
+                            "sketch": "ajax请求",
+                            "ajaxRequest": [{
+                                    "index": "5acc6b0a72310da9e57107ddf97b86c",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "请求类型",
+                                    "value": "get/post(默认)"
+                                }, {
+                                    "index": "77866bf238db5fa83b4a390efec9dee",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "数据地址",
+                                    "value": "url"
+                                },
+                                {
+                                    "index": "ffc78102e2d41418d153091ab103b80",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "数据",
+                                    "value": "data"
+                                },
+                                {
+                                    "index": "03fd4cf64817e12ab58f4148fd0b4ba",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "数据传输格式",
+                                    "value": "默认:application/x-www-form-urlencoded; charset=UTF-8"
+                                },
+                                {
+                                    "index": "2773154db35d7a88ae6d48bd9bdb898",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "数据返回格式",
+                                    "value": "json"
+                                },
+                                {
+                                    "index": "ee8d33dc38a625fa7d175b13898dc67",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "跨域回调函数",
+                                    "value": "jsonp"
+                                },
+                                {
+                                    "index": "83433d4651a77d9b60494edf76b97de",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "同步/异步",
+                                    "value": "false/true(默认)"
+                                },
+                                {
+                                    "index": "76e57e7d2c5358f8343c864006248f2",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否开启遮罩",
+                                    "value": "true(默认)/false"
+                                },
+                                {
+                                    "index": "69f87d7bfad8a7aaaea97cd08287b86",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "请求成功回调",
+                                    "value": "success"
+                                },
+                                {
+                                    "index": "5d98729ece39211890717d4fd3ce2c9",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "请求失败回调",
+                                    "value": "error"
+                                },
+                                {
+                                    "index": "c9e9bc8c3dfe86eb2a9e165e90095e0",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.ajaxRequest({\n    type: \"post\", //不必填\n    url: \"数据地址\",\n    data: \"数据\",\n    contentType: \"application/x-www-form-urlencoded; charset=UTF-8\", //不必填\n    dataType: \"json\", //不必填\n    jsonp: \"callback\", //不必填\n    async: \"true\", //不必填\n    mask: true, //不必填\n    success: function(result, allResult){\n        //result 返回数据中的data参数\n        //allResult 返回所有数据\n    },\n    error: function(msg){\n        //返回失败原因\n    }\n});"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "755fc01b7c02e519d4ca8b00400f170",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.getSessionStorage",
+                            "value": "getSessionStorage",
+                            "sketch": "获取SessionStorage信息",
+                            "getSessionStorage": [{
+                                    "index": "2eae01193f90f0e840eb56da252b529",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "2dcba7d9505b7078e4c646633421398",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.getSessionStorage(\"name\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "cfc351e5aaf1584ba6f68258f4d8e2b",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.setSessionStorage",
+                            "value": "setSessionStorage",
+                            "sketch": "设置SessionStorage信息",
+                            "setSessionStorage": [{
+                                    "index": "1970ad86eb7f8b2b7fe47aee518145d",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "3e0df564267017ca9a81287bbee4ec1",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引内容",
+                                    "value": "value"
+                                },
+                                {
+                                    "index": "5347702338e556f81d940e38b86a23e",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.setSessionStorage(\"name\", \"value\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "9c1554af23a3e0babecfd8f98fee58a",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.clearSessionStorage",
+                            "value": "clearSessionStorage",
+                            "sketch": "清除SessionStorage信息",
+                            "clearSessionStorage": [{
+                                    "index": "900aede302d5399820613056afd75ce",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "6944126b74e50038bb18d39e2517925",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.clearSessionStorage(\"name\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "d2afb8c6c1ff6439f9f1c45cdc3e4ba",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.getLocalStorage",
+                            "value": "getLocalStorage",
+                            "sketch": "获取LocalStorage信息",
+                            "getLocalStorage": [{
+                                    "index": "27ea20d8978f69cad02019da861f0d5",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "79d4e5eac640ae2b1ceb76b753527fd",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.getLocalStorage(\"name\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "27f9522a9bc828e86e729ccb48874a5",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.setLocalStorage",
+                            "value": "setLocalStorage",
+                            "sketch": "设置LocalStorage信息",
+                            "setLocalStorage": [{
+                                    "index": "3f531106f9f88e9bad492d278b2797c",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "c30888b5eafbd0faaa2174252595ab9",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引内容",
+                                    "value": "value"
+                                },
+                                {
+                                    "index": "187859400a7ed38ba4d92e581f89389",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.setLocalStorage(\"name\", \"value\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "8ecf50dde73bd23ba6086965f463daf",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.clearLocalStorage",
+                            "value": "clearLocalStorage",
+                            "sketch": "清除LocalStorage信息",
+                            "clearLocalStorage": [{
+                                    "index": "7a2a9f8a662cdca920eafca9ee314e3",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "84373e968463ef39af2c090e3b2684e",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.clearLocalStorage(\"name\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "2b2c9b7ef71131787889b09045de445",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.getCookies",
+                            "value": "getCookies",
+                            "sketch": "获取Cookies信息",
+                            "getCookies": [{
+                                    "index": "edf16fb8d96e166a54e7cd5f1e98548",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "46ed36ddad9e018a67f11fd036588d7",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否特殊文本 需编译",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "54e20c36f0af48b91361b252c1f0e17",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.getCookies(\"name\", false);"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "edaa7329530b81597e92947c952d05f",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.setCookies",
+                            "value": "setCookies",
+                            "sketch": "设置Cookies信息",
+                            "setCookies": [{
+                                    "index": "5f8ff75a26d5d8c884316198d035f46",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "7822b602525c720a8e44c252a02e68e",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引内容",
+                                    "value": "value"
+                                },
+                                {
+                                    "index": "7ca6bc60f976d1f834798cb6351b29d",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "存储时间",
+                                    "value": "默认 365/天"
+                                },
+                                {
+                                    "index": "e155208e51ef693b46fca6a0bd45cad",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.setCookies(\"name\", \"value\", 365);"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "f79754eec3e64c1bbb308ca25bc2c9b",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.clearCookies",
+                            "value": "clearCookies",
+                            "sketch": "清除Cookies信息",
+                            "clearCookies": [{
+                                    "index": "7f0ce45ebc070479444ce2e47574fa8",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引值",
+                                    "value": "name"
+                                },
+                                {
+                                    "index": "b484ac17266830e83a43361713a2863",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.clearCookies(\"name\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "4b320279a74e1bbb636d0fdee3bbe50",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.getDate",
+                            "value": "getDate",
+                            "sketch": "获取时间文本",
+                            "getDate": [{
+                                    "index": "92ebf0f9135020db978732bb457f975",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "自定义时间",
+                                    "value": "times"
+                                },
+                                {
+                                    "index": "e43e91188b511b9ac832ebbed63b3f1",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//自定义时间格式\n//yyyy-MM-dd  或者  yyyy-MM-dd hh:mm:ss\n//毫秒数 或者 标准时间格式\n\n$$.getDate(\"2019-11-12 11:02:19\")\n\nlog({\"year\":\"2019\",\"month\":\"11\",\"day\":\"12\",\"hours\":\"11\",\"minutes\":\"02\",\"seconds\":\"19\",\"date\":\"2019-11-12\",\"time\":\"11:02\",\"week\":\"星期二\"});"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "48b1db2a7f3087b99ad350c2235074d",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.getTreeData",
+                            "value": "getTreeData",
+                            "sketch": "把列表数据整理成树形结构",
+                            "getTreeData": [{
+                                    "index": "1df5d49f097015789e1d1ae4ace5ee9",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "列表数据",
+                                    "value": "list"
+                                },
+                                {
+                                    "index": "5989703552696fab55823fbdbf779ff",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "文本字段",
+                                    "value": "text"
+                                },
+                                {
+                                    "index": "65155cc9d34b830b25c0d02ed59dfd5",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "父节点字段",
+                                    "value": "pid"
+                                },
+                                {
+                                    "index": "8a1c12818c409a0a0acba6125e61570",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "当前节点",
+                                    "value": "id"
+                                },
+                                {
+                                    "index": "08026c257aac643a3b78388faf3891d",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.getTreeData({\n\tlist:[{pid:'',id:'0',text:'123'},{pid:'0',id:'1',text:'223'}],\n\ttext: \"text\",\n\tpid: \"pid\",\n\tid: \"id\"\n});\n\nlog([{\"id\":\"0\",\"text\":\"123\",\"childs\":[{\"id\":\"1\",\"pid\":\"0\",\"text\":\"223\",\"childs\":[]}]}])"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "62adb2b810dd267afbba51de8fb56c4",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.getJsonLevel",
+                            "value": "getJsonLevel",
+                            "sketch": "获取树形结构数据层级",
+                            "getJsonLevel": [{
+                                    "index": "212da7f48dce90687de4f304dd086dd",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "数组类型数据",
+                                    "value": "data"
+                                },
+                                {
+                                    "index": "8f5702b941a41a0866826b22eda3e1e",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "子节点字段名",
+                                    "value": "child"
+                                },
+                                {
+                                    "index": "e13df06b6bc9441a08fa39f5dfe9ae8",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.getJsonLevel([\n    {\n        id:'1',child:[{id:'2',child:[]}\n    ]}\n], \"child\")"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "7283f3cbe3ca6d5b6c6564bed6f2fa8c",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.generateUUID",
+                            "value": "generateUUID",
+                            "sketch": "获取31位动态随机码",
+                            "generateUUID": [{
+                                "index": "73f27c925f715e68db9adaec22406101",
+                                "type": "multShow",
+                                "text": "多行文本",
+                                "name": "示例",
+                                "value": "$$.generateUUID()\n\nlog(\"d240123fc003b5797275bdd7fc48658\");"
+                            }]
+                        },
+                        {
+                            "index": "d190ecc5044ee4ba9ae104e43f286e4",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.isChinese",
+                            "value": "isChinese",
+                            "sketch": "是否含有中文",
+                            "isChinese": [{
+                                    "index": "f7d11a73df08b73b4e2bf365f21381c",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "索引数据",
+                                    "value": "data"
+                                },
+                                {
+                                    "index": "4d3d04459d62d0aae95c06665bec62c",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.isChinese(\"你好，Hello\");"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "bf2b1f585405719adc84a3b4ea62474",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.isNumbers",
+                            "value": "isNumbers",
+                            "sketch": "校验数字格式",
+                            "isNumbers": [{
+                                    "index": "6cbc41e1fa4165b8c46fbf9963210ef",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "元素标签",
+                                    "value": "elem"
+                                },
+                                {
+                                    "index": "b00a75d8cb3bc69bbd33e6bdb6a42f2",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否保留2位小数",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "1817f1c669b5210af1c18e85f970563",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//elem 为元素标签\n$$.isNumbers(elem, false);"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "6663ddeea16c652ac9f01c60a540d38",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.isCordID",
+                            "value": "isCordID",
+                            "sketch": "身份证号码校验",
+                            "isCordID": [{
+                                    "index": "922969f598392d0b0c4a3829632fdcf",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "元素标签",
+                                    "value": "elem"
+                                },
+                                {
+                                    "index": "80bc128905b9ef6b38d79847f79e553",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//elem 为元素标签\n$$.isCordID(elem)"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "514e812edc34765b65968423d5de402",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.isPhone",
+                            "value": "isPhone",
+                            "sketch": "手机号码及固定电话校验",
+                            "isPhone": [{
+                                    "index": "b2ec51d6c093d5bab71b5dd9a1dabf3",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "元素标签",
+                                    "value": "elem"
+                                },
+                                {
+                                    "index": "b35dad75e8c98d9b9fd6c3aacc787b3",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "校验类型",
+                                    "value": "index"
+                                },
+                                {
+                                    "index": "f872915500a9e3eb95f7465b05d2d22",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//elem 为元素标签\n//index 1-手机号码 2-固定号码 空-校验所有\n$$.isPhone(elem, index);"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "7d67d9f60c6d00482291e12d690ae27",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.isPostCode",
+                            "value": "isPostCode",
+                            "sketch": "邮编校验",
+                            "isPostCode": [{
+                                    "index": "28b5a73c77987b9882bc28f1193e1c1",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "元素标签",
+                                    "value": "elem"
+                                },
+                                {
+                                    "index": "07adc09ef7cfc12a06e3806ac4a5a62",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//elem 元素标签\n$$.isPostCode(elem);"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "0c227c6750f0cae9d09903440ce2af8",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.isEmail",
+                            "value": "isEmail",
+                            "sketch": "邮箱校验",
+                            "isEmail": [{
+                                    "index": "44e4fc0d9c0774da33f170813aa5f16",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "元素标签",
+                                    "value": "elem"
+                                },
+                                {
+                                    "index": "f144b0b2aea684d9d58410febe4026e",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//elem 元素标签\n$$.isEmail(elem);"
+                                }
+                            ]
+                        }
+                    ]
+                });
+            }
+
+            //APP
+            function APP() {
+                $$.Content_Form({
+                    elem: '.APP',
+                    data: [{
+                            "index": "d5f0b69c8b0f263a6041d41e42a5050",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "Jump",
+                            "value": "must",
+                            "sketch": "内部页面固定跳转参数",
+                            "must": [{
+                                "index": "db9b7e4c46f1331ab09afc80fc2e389",
+                                "type": "multShow",
+                                "text": "多行文本",
+                                "name": "简述",
+                                "value": "请在对应的元素标签上加上 Jump 属性和跳转路径 (不加文件名后缀)\nJump=\"pages/main/***\""
+                            }]
+                        },
+                        {
+                            "index": "f7e2e9110267077a46fcbd1e8bdd547",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.Content_Tab",
+                            "value": "Content_Tab",
+                            "sketch": "渲染选项卡/列表",
+                            "Content_Tab": [{
+                                    "index": "91757d336000ec1a4379ab5a8cf7a42",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "元素标签",
+                                    "value": "elem"
+                                },
+                                {
+                                    "index": "123eadf3d6dd56ca97681441c610210",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否动态加载",
+                                    "value": "true(默认)/false"
+                                },
+                                {
+                                    "index": "f1e70d9c9dbf23b98c22ef03a886462",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否等分",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "d172cbb72060e3382a002f48b959b29",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否滑动",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "01f063e0a1b637f99f34f995f91ca82",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否固定高度",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "0d16074bf2adfe7b71425837103ca70",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否支持列表多选",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "f600a79f56850968404700bdb3837ff",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否分页",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "a98e7c5d486a74692f114fbb78317e4",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "选项卡文本",
+                                    "value": "menuText"
+                                },
+                                {
+                                    "index": "6f47ec9f4988c38a804a50ac0e763f9",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "可配置参数",
+                                    "value": "param"
+                                },
+                                {
+                                    "index": "5ce0f4d1657ccaeadbc4a40ac79204b",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "静态文本/方法回调文本",
+                                    "value": "content"
+                                },
+                                {
+                                    "index": "5dd6479a4188342b43865e8327819be",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "可配置实际页面路径",
+                                    "value": "url"
+                                },
+                                {
+                                    "index": "42cc8428d4a976a8194ccb9202d0d98",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "静态文本渲染回调/可配置js路径",
+                                    "value": "callback"
+                                },
+                                {
+                                    "index": "ec4ed303cf85aff8867dda9289eb971",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "搜索框索引",
+                                    "value": "key"
+                                },
+                                {
+                                    "index": "c80ad30142d3a76b633e3fe5a8a2395",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "筛选条件",
+                                    "value": "classify"
+                                },
+                                {
+                                    "index": "7e1274724c314449ff2f3531d27bf9c",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "请求数据参数",
+                                    "value": "ajax"
+                                },
+                                {
+                                    "index": "3e7ebaf09d85af288c518561bbfc1b8",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "滑动按钮数组",
+                                    "value": "['确定','取消'] / '确定,取消'"
+                                },
+                                {
+                                    "index": "12af62c4e08351e9299f356c7bde0db",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "滑动按钮点击回调",
+                                    "value": "swipeCallback"
+                                },
+                                {
+                                    "index": "6b6ef37cdfb11ff96efbadb5a744444",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.Content_Tab({\n    elem: \"elem\", //元素标签\n    dynamic: \"true/false\", //是否动态加载 默认true\n    fixed: \"true/false\", //是否等分 默认false\n    slide: \"true/false\", //是否滑动 默认false\n    autoHeight: \"true/false\", //是否固定高度 默认false\n    data: [{ //选项卡数组\n        isChecked: \"true/false\", //是否列表多选 未适配分页功能\n        paging: \"true/false\", //是否分页 默认false\n        menu: \"选项卡文本\",\n        param: { //可配置自定义参数\n            class: \"className\"\n        },\n        content: \"静态文本/方法回调文本\",\n        url: \"可配置实际页面路径\",\n        callback: \"静态文本渲染回调/js路径\",\n        search: {\n            name: \"key\", //搜索框索引字段名\n            text: \"搜索\" //搜索框提示文本\n        }, //提示文本默认-搜索 该参数也可以直接填写字段名\n        classify: [ //列表筛选条件 暂不适用5个及以上的条件\n            {\n                type: 'time', //条件类型 time/radio/checkbox/levelselect\n                title: '标题', //条件标题\n                name: '字段名', //筛选数据的参数名\n                data: '数据地址', //支持 接口地址/数组(含字符串类型)\n                nameText: '文本数据别名', //下拉选择有效\n                valuetext: '数值别名', //下拉选择有效\n                childText: '子节点数据别名', //级联有效\n                lastValid: 'true(默认)/false', //级联有效 是否最后一项有效\n                isTree: 'true(默认)/false', //级联有效 是否树型结构数据\n                pidText: '父节点数据别名', //级联有效\n            }\n        ],\n        ajax: { //请求数据参数\n            url: \"数据请求地址\",\n            data: { //请求传递的参数\n                pageIndex: 0, //默认 0 不必填\n                pageSize: 20 //默认10条 不必填\n            },\n            //分页最小页码 默认 0\n            pageIndexMin: \"0\",\n            //起始页索引参数别名 默认 pageIndex\n            pageIndexName: \"pageIndex\",\n            //每页条数参数别名 默认 pageSize\n            pageSizeName: \"pageSize\",\n            template: function (result) {\n                //列表渲染模板\n                //返回请求数据中的data参数\n            },\n            callback: function (elem, uuid) {\n                //elem 返回当前选中元素标签\n                //多选时，返回选中的元素标签数组\n                //uuid 返回当前列表对象\n                //调用window[uuid].refresh() 可刷新列表\n            },\n            renderCallBack: function(result, sId, uuid){\n                //result 返回请求接口的数据\n                //sId 当前的容器\n                //uuid 返回当前列表对象\n            }, \n            swipe: [\"确定\", \"取消\"], //可数组或者以英文逗号相隔的字符串\n            swipeCallback: function (elem, index) { //滑动按钮点击回调\n                //elem 元素标签\n                //index 滑动按钮索引\n            }\n        }\n    }]\n});"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "366e80aae8b1bfdb4d7596315102ef7",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.Content_Form",
+                            "value": "Content_Form",
+                            "sketch": "表单动态绘制",
+                            "Content_Form": [{
+                                    "index": "1575414fbb16ebdb37ef04aa7db2498",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "元素标签",
+                                    "value": "elem"
+                                },
+                                {
+                                    "index": "762a2394e054426b25f4c2a327f0cef",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "表单数据",
+                                    "value": "data"
+                                },
+                                {
+                                    "index": "21b5ffe3edf8445aefe02236348f425",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "数据绘制地址",
+                                    "value": "http://slakestorm.com/edit"
+                                },
+                                {
+                                    "index": "b046b9dd0eff1a9a5847bb1ca5889c9",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "页面渲染回调",
+                                    "value": "callback"
+                                },
+                                {
+                                    "index": "17afc6a0e7d9b12ab0774cb828b7b1b",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "提交按钮回调",
+                                    "value": "submit"
+                                },
+                                {
+                                    "index": "6ccdb5652511ceda23b8787cbd62183",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "提交按钮展示文本",
+                                    "value": "默认 提交"
+                                },
+                                {
+                                    "index": "1ae68d836d67774a59da092c225276e",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "提交按钮位置",
+                                    "value": "默认 底部固定"
+                                },
+                                {
+                                    "index": "352700ad7e31739985b24c78e19f71f",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.Content_Form({\n    elem: \"elem\", //元素标签\n    data: [], //表单数据\n    callback: function(){}, //页面渲染回调\n    submit: function(result, index) { //提交回调\n        //result 返回的表单数据\n        //index 返回按钮索引\n    },\n    submitText: \"提交\" ,\n        //按钮文本 可配置多个\n        //['提交','修改'] 或者 '提交,修改'\n    submitAlign: \"auto\"\n        //按钮不固定 随滚动条滚动\n});"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "497403225a86bba81adf06dc3edb095",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.alert",
+                            "value": "alert",
+                            "sketch": "(APP) 弹窗框",
+                            "alert": [{
+                                    "index": "9b907b20ab14d2aa538233639492c7f",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "文本",
+                                    "value": "content"
+                                },
+                                {
+                                    "index": "fdfe14fe5c00f9681c472c270eaff11",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "回调",
+                                    "value": "callback"
+                                },
+                                {
+                                    "index": "4f15a43be9a6e868761450526ba35f3",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.alert(\"你的我就是我\", function(){\n    console.log(\"我的还是我的\");\n});"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "9329b2fdad61a3586e9eaa7e56db483",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.confirm",
+                            "value": "confirm",
+                            "sketch": "询问框",
+                            "confirm": [{
+                                    "index": "0d1943292e0574fb32e578ad66e5623",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "询问标题文本",
+                                    "value": "默认 提示"
+                                },
+                                {
+                                    "index": "33491ff36a2a68e9d0768f1fa55e2d1",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "询问内容",
+                                    "value": "文本"
+                                },
+                                {
+                                    "index": "2a76f06a0e7c67a91a2915a1f2a10f3",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "询问按钮组",
+                                    "value": "默认 [\"取消\", \"确定\"]"
+                                },
+                                {
+                                    "index": "9fd7e1296e60fdea47f9add3ca4c840",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "询问回调索引",
+                                    "value": "0/1(默认)"
+                                },
+                                {
+                                    "index": "ca6626812c8d0d381c0cb8ef08abca6",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "询问回调",
+                                    "value": "callback"
+                                },
+                                {
+                                    "index": "b885bdfab5be5588f93f9eb4cc2a761",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.confirm(\"我是谁？我在哪？\", function () {\n    console.log(\"你是不是傻！\");\n});\n\n$$.confirm({\n    title: \"询问标题\", //不必填\n    content: \"询问内容\",\n    buttons: [\"取消\", \"确定\"], //不必填\n    buttonIndex: 1, //不必填\n    callback: function () {} //询问回调\n});"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "cd8252a775bc4fab880de200b2334d9",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.toast",
+                            "value": "toast",
+                            "sketch": "悬浮窗",
+                            "toast": [{
+                                    "index": "384f44170143d13b6d12772e64182bf",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "显示内容",
+                                    "value": "文本"
+                                },
+                                {
+                                    "index": "4c9ed023aa5a34f927e50952db3cd17",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "悬浮时间",
+                                    "value": "单位/毫秒"
+                                },
+                                {
+                                    "index": "d6807c50f53ec95b4bd2c9e6abb6b9f",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "悬浮位置",
+                                    "value": "top/center(默认)/bottom"
+                                },
+                                {
+                                    "index": "985e7ba677a46aa86ccc52df40af10b",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "窗口消失回调",
+                                    "value": "callback"
+                                },
+                                {
+                                    "index": "0107764f97f813dbe8f43b56572e973",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.toast('Hello World!');\n\n$$.toast({\n    content: \"Hello World!\", //文本\n    timeout: 5000, //5秒\n    position: \"center\", //top center bottom\n    callback: function () {} //窗口消失回调\n});"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "70c57e0f7abb332947b93c24cc12ac7",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.loading",
+                            "value": "loading",
+                            "sketch": "加载中遮罩",
+                            "loading": [{
+                                    "index": "df03aae1371dc2fa5d90df16d1da72a",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否关闭遮罩",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "c01792e557b840590aff28e5b935418",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.loading(); //开启\n\n$$.loading(true); //关闭"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "c2bf1901852aa458ff6fe295649cc44",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.open",
+                            "value": "open",
+                            "sketch": "页面跳转",
+                            "open": [{
+                                    "index": "d71e79c9088c9599dfdad53d51e2460",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "跳转地址",
+                                    "value": "url"
+                                },
+                                {
+                                    "index": "1c818ed3ae97218adc5ec2143c2c3a1",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "所需传递的参数",
+                                    "value": "param"
+                                },
+                                {
+                                    "index": "9b69ce7db3fca10803732729ef4c12d",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否替换当前页",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "7e1872e9d08f804bf207f4f4bc14894",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "是否已iframe形式加载",
+                                    "value": "true/false(默认)"
+                                },
+                                {
+                                    "index": "180c4e352a12e3d8f429cf16709a9eb",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//直接页面跳转\n$$.open(\"pages/main\");\n\n//带参页面跳转\n$$.open({\n    url: \"pages/main\", //页面跳转地址\n    param: { //所需传递的参数\n        id: 'id',\n        name: 'name'\n    },\n    replace: \"true/false\", //是否替换当前页\n    iframe: \"true/false\" //是否已iframe形式加载\n});\n\n//浏览器形式页面跳转\n$$.open(\"http://app.slakestorm.com/api\");\n\n//移动端新窗口打开 (现只支持钉钉)\n//$$.open 的回调方法\n$$.OPENWINDOW = function (url){\n   log(\"这是个外部地址\");\n}"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "988d4c59e318dc59b725fb8e5bd2085",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.closePage",
+                            "value": "closePage",
+                            "sketch": "关闭/后退页面",
+                            "closePage": [{
+                                    "index": "8d94a3c6b4de740982be7db75e7e615",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "回调",
+                                    "value": "callback"
+                                },
+                                {
+                                    "index": "69db4a251abca4a8a89beb945210465",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "后退索引",
+                                    "value": "默认 1"
+                                },
+                                {
+                                    "index": "2c052ab3cda4aa482ad3016969a0521",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "//后退一页\n$$.closePage(function(){\n    console.log('我后退了！');\n}, 1);"
+                                }
+                            ]
+                        },
+                        {
+                            "index": "8ffd782cc3bed9eb825c7f686b509e8",
+                            "type": "fold",
+                            "text": "折叠控件",
+                            "name": "$$.pickerDate",
+                            "value": "pickerDate",
+                            "sketch": "时间控件",
+                            "pickerDate": [{
+                                    "index": "0db33d541f08fc6bdf17099249f896a",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "元素标签",
+                                    "value": "elem"
+                                },
+                                {
+                                    "index": "4c00d3522739d408b251fb899126b3c",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "日期格式",
+                                    "value": "yyyy-MM-dd hh:mm:ss"
+                                },
+                                {
+                                    "index": "aa7fad7c7ac7bd28b043ae40fac88af",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "初始值格式",
+                                    "value": "yyyy-MM-dd 或者 yyyy/MM/dd"
+                                },
+                                {
+                                    "index": "18e335970955bb88604238182bc4b39",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "最小日期",
+                                    "value": "min"
+                                },
+                                {
+                                    "index": "fd45c5b065dce7f97e0ad73c45db09c",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "最大日期",
+                                    "value": "max"
+                                },
+                                {
+                                    "index": "5ae93af2c0dfc6c81113e68bf95dafd",
+                                    "type": "text",
+                                    "text": "单行文本",
+                                    "must": "",
+                                    "musttext": "",
+                                    "name": "赋值回调",
+                                    "value": "callback"
+                                },
+                                {
+                                    "index": "d71c99283aec2838bc1429464c1ec19",
+                                    "type": "multShow",
+                                    "text": "多行文本",
+                                    "name": "示例",
+                                    "value": "$$.pickerDate({\n    elem: \"elem\", //可以是多个元素对象 数组\n    //默认 yyyy-MM-dd\n    formatValue: \"yyyy-MM-dd hh:mm:ss\",\n    value: \"2019-11-14 10:39\", //初始值\n    min: \"2019-11-01\", //最小日期\n    max: \"2019-11-30\", //最大日期\n    callback: function (value) {} //选中的日期回调\n});"
+                                }
+                            ]
+                        }
+                    ]
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>
